@@ -1,11 +1,13 @@
 import React from 'react'
 import Cita from './cita.jsx'
 
-function listado() {
+function listado({ citas, useCitas }) {
     return (
-        <div class="one-half column">
+        <div className="one-half column">
             <h2>Administra tus citas</h2>
-            <Cita></Cita>
+            {citas.map(item=>(
+                <Cita item={item} useCitas={useCitas}></Cita>
+            ))}
         </div>
     );
 }
