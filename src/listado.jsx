@@ -6,7 +6,7 @@ function listado({ citas, useCitas }) {
         <div className="one-half column">
             <h2>Administra tus citas</h2>
             {citas.map(item=>(
-                <Cita item={item} useCitas={useCitas}></Cita>
+                <Cita item={item} useCitas={useCitas} citas={citas}></Cita>
             ))}
         </div>
     );
