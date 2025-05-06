@@ -1,5 +1,5 @@
 import './App.css'
-import Form from './from.jsx'
+import Form from './form.jsx'
 import Listado from './listado.jsx'
 
 function App() {
