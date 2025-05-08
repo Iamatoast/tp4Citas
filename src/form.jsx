@@ -1,11 +1,27 @@
 import React from 'react'
 import './form.css'
 
-export default function form() {
+export default function form({addCitas, citas}) {
+  const addCita = (formData) => {
+    let temp = [...citas];
+    let newCita = {
+      id: citas.length,
+      nombre: formData.get("nombre"),
+      propietario: formData.get("propietario"),
+      fecha: formData.get("fecha"),
+      hora: formData.get("hora"),
+      sintomas: formData.get("sintomas")
+    }
+    console.log(newCita);
+    temp.push(newCita);
+    addCitas(temp);
+    localStorage.setItem("citas", JSON.stringify(temp));
+  }
+
   return (
     <div className="one-half column">
         <h2>Crear mi Cita</h2>
-        <form>
+        <form action={addCita}>
             <label>Nombre Mascota</label>
             <input type="text" name="mascota" className="u-full-width" placeholder="Nombre Mascota" />
             <label>Nombre Dueño</label>
