@@ -23,7 +23,7 @@ export default function form({addCitas, citas}) {
         <h2>Crear mi Cita</h2>
         <form action={addCita}>
             <label>Nombre Mascota</label>
-            <input type="text" name="mascota" className="u-full-width" placeholder="Nombre Mascota" />
+            <input type="text" name="nombre" className="u-full-width" placeholder="Nombre Mascota" />
             <label>Nombre Dueño</label>
             <input type="text" name="propietario" className="u-full-width" placeholder="Nombre dueño de la mascota" />
             <label>Fecha</label>
