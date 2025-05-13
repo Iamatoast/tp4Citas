@@ -12,10 +12,14 @@ export default function form({addCitas, citas}) {
       hora: formData.get("hora"),
       sintomas: formData.get("sintomas")
     }
-    console.log(newCita);
-    temp.push(newCita);
-    addCitas(temp);
-    localStorage.setItem("citas", JSON.stringify(temp));
+    if (!newCita.nombre || !newCita.propietario || !newCita.fecha || !newCita.hora || !newCita.sintomas){
+      alert("Completa todo los campos");
+    }
+    else{
+      temp.push(newCita);
+      addCitas(temp);
+      localStorage.setItem("citas", JSON.stringify(temp));
+    }
   }
 
   return (
@@ -23,15 +27,15 @@ export default function form({addCitas, citas}) {
         <h2>Crear mi Cita</h2>
         <form action={addCita}>
             <label>Nombre Mascota</label>
-            <input type="text" name="nombre" className="u-full-width" placeholder="Nombre Mascota" />
+            <input type="text" name="nombre" className="u-full-width" placeholder="Nombre Mascota" required/>
             <label>Nombre Dueño</label>
-            <input type="text" name="propietario" className="u-full-width" placeholder="Nombre dueño de la mascota" />
+            <input type="text" name="propietario" className="u-full-width" placeholder="Nombre dueño de la mascota" required/>
             <label>Fecha</label>
-            <input type="date" name="fecha" className="u-full-width" />
+            <input type="date" name="fecha" className="u-full-width" required/>
             <label>hora</label>
-            <input type="time" name="hora" className="u-full-width" />
+            <input type="time" name="hora" className="u-full-width" required/>
             <label>Sintomas</label>
-            <textarea name="sintomas" className="u-full-width"></textarea>
+            <textarea name="sintomas" className="u-full-width" required></textarea>
             <button type="submit" className="u-full-width button-primary">Agregar Cita</button>
         </form>
     </div>
