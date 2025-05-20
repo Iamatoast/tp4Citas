@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './cita.css'
 
 function cita({item, addCitas, citas}) {
@@ -7,8 +7,10 @@ function cita({item, addCitas, citas}) {
     temp.splice(key, 1);
     for (let index = 0; index < temp.length; index++) temp[index].id = index;
     addCitas(temp);
-    localStorage.setItem("citas", JSON.stringify(temp));
   }
+  useEffect(() => {
+    localStorage.setItem("citas", JSON.stringify(citas));
+  });
 
   return (
     <div className="cita">
