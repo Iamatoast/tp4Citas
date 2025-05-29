@@ -1,6 +1,4 @@
 import './App.css'
-import Form from './form.jsx'
-import Listado from './listado.jsx'
 import { useState } from 'react';
 
 function App() {
