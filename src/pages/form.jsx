@@ -1,8 +1,7 @@
 import React from 'react'
 import './form.css'
 
-export default function form() {
-	const { addCitas, citas } = useParams();
+export default function form({ addCitas, citas }) {
 
   const addCita = (formData) => {
     let temp = [...citas];
@@ -25,7 +24,7 @@ export default function form() {
   }
 
   return (
-    <div className="one-half column">
+    <div className="column rezizedContainer">
 	<h2>Crear mi Cita</h2>
 	<form action={addCita}>
 	    <label>Nombre Mascota</label>
