@@ -1,7 +1,10 @@
-import React from 'react'
-import Cita from './cita.jsx'
+import React from 'react';
+import Cita from './cita.jsx';
+import { useParams } from 'react-router';
 
-function listado({ citas, addCitas }) {
+function listado() {
+	const { citas, addCitas } = useParams();
+
     return (
         <div className="one-half column">
             <h2>Administra tus citas</h2>
